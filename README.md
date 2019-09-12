@@ -117,6 +117,23 @@ export default {
     <td>Boolean</td>
   </tr>
 </table>
+<table>
+  <tr>
+    <th>插槽</th>
+    <th>插槽名称</th>
+    <th>插槽描述</th>
+  </tr>
+  <tr>
+    <td>--</td>
+    <td>默认插槽</td>
+    <td>往环形进度条中间添加内容</td>
+  </tr>
+  <tr>
+    <td>point</td>
+    <td>顶点插槽</td>
+    <td>替换进度条顶点图标，需要注意大小超过50*50px时你需要修改源码，不超过时，将插件中`.progress-point-img`的内容复制出来做修改</td>
+  </tr>
+</table>
 
 ## 运行 demo 命令
 
