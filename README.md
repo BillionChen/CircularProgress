@@ -147,6 +147,6 @@ export default {
 2. [flex 布局-菜鸟教程](https://www.runoob.com/w3cnote/flex-grammar.html)
 3. [weex 官网-css-transition](https://weex.apache.org/zh/docs/styles/common-styles.html#transition)
 
-# 已知问题
+### 已知问题
 
 1. 当进度从小于 0.5 跳跃至大于 0.5 时，进度条可能会有断位
