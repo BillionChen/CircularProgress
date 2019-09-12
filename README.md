@@ -42,6 +42,23 @@ export default {
 |autoSpeed|自动速度|自动进度时配置的参数。默认8秒完成半圈，数字越小速度越快。建议使用1/2/4/8/16，不然在html中半圆的首尾相接会出现断位|8|Number|
 |point|是否显示顶点||false|Boolean|
 
+<table>
+  <tr>
+    <th>参数</th>
+    <th>参数名称</th>
+    <th>参数描述</th>
+    <th>默认值</th>
+    <th>需求参数类型</th>
+  </tr>
+  <tr>
+    <td>rate</td>
+    <td>当前进度</td>
+    <td>范围(0-1)，使用时，需要用当前值除以总值得到。当启动自动进度时，该参数失效</td>
+    <td>0</td>
+    <td>Number</td>
+  </tr>
+</table>
+
 ## 运行demo命令
 
 `vue serve`
