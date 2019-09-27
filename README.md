@@ -156,8 +156,8 @@ export default {
 1. css 属性不能连写，需要拆的很开（日常坑）
 2. html 模板上的计算样式:style 的内容，如果在 css 中有默认的内容，会出现闪屏问题，会先重置为 css 默认样式，然后用计算样式覆盖
 3. 在 Android 环境下，单独设置单一个边框(例如:`border-top`)时，他与另一个边框的交汇位置不是直线，而是你单独设置的边框，这会导致半个正方形遮住了整个半圆，会上下都有点突出来
-4. weex 下的所有 div 默认是 `display:flex;box-sizing: border-box;`  
-5.在数据改变时，计算样式:style 的内容 "transform: `translateY(-${(realWidth-borderWidth)/2}px) rotate(${angle}deg) `"，有可能有半句失效，平移旋转3D变换连写有风险
+4. weex 下的所有 div 默认是 `display:flex;box-sizing: border-box;`
+5. 在数据改变时，计算样式:style 的内容 "transform: `translateY(-${(realWidth-borderWidth)/2}px) rotate(${angle}deg) `"，有可能有半句失效，平移旋转3D变换连写有风险
 
 ## 参考
 
