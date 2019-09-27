@@ -58,20 +58,31 @@
           }"
         ></div>
       </div>
-      <!-- 这里旋转，宽高不是奇数，所以转起来会有1个像素的偏差 -->
+      <!-- 旋转时，宽高不是奇数，转起来会有1个像素的偏差 -->
       <div v-if="point&&refreshed"
-        class="progress-point-content"
+        class="progress-pointer"
         :style="{
-            top:  (wrapperWidth/2) + 'px',
+            height: (wrapperWidth/2) + 'px',
+            bottom:  (wrapperWidth/2) + 'px',
             left:  (wrapperWidth/2) + 'px',
-            'transform-origin': `25px ${(realWidth-borderWidth)/2+25}px`,
-            transform: `translateY(-${(realWidth-borderWidth)/2}px) rotate(${angle}deg) `
+            width: (wrapperPadding*2) + 'px',
+            'margin-left': `-${wrapperPadding}px`,
+            'transform-origin': `${wrapperPadding}px ${wrapperWidth/2}px`,
+            transform: `rotate(${angle}deg) `
         }">
-        <slot name="point">
-          <div class="progress-point-img" :style="{
-            'background-color': borderColor
-          }"></div>
-        </slot>
+        <div class="progress-pointer-content"
+          :style="{
+            width: wrapperPadding*2 + 'px',
+            height: wrapperPadding*2 + 'px',
+          }">
+          <slot name="point">
+            <div class="progress-point-img" :style="{
+              left: wrapperPadding + 'px',
+              top: wrapperPadding + 'px',
+              'background-color': borderColor
+            }"></div>
+          </slot>
+        </div>
       </div>
       <slot></slot>
     </div>
@@ -274,22 +285,24 @@ export default {
   /* 旋转角度angle+45（angle最低180） */
 }
 
-.progress-point-content{
+/* 进度指示器（指针） */
+.progress-pointer{
   position: absolute;
-  width: 50px;
-  height: 50px;
-  margin-left: -25px;
-  margin-top: -25px;
   transition-property: transform;
   transition-duration: 1s;
   transition-delay: 0;
   transition-timing-function: linear;
 }
+/* 指针顶点存放位置 */
+.progress-pointer-content{
+  width: 50px;
+  height: 50px;
+  top: 0;
+}
+/* 指针顶点图案 */
 .progress-point-img{
   /* 如果要重写进度条顶点，把这段复制出去再修改 */
   position: absolute;
-  left: 25px;
-  top: 25px;
   width: 20px;
   height: 20px;
   margin-left: -10px;
